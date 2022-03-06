@@ -29,8 +29,9 @@ class NoopCalculator extends AbstractCalculator
      */
     protected function doCalculate(): StatisticsTo
     {
-        $value = $this->postCount > 0
-            ? count($this->users) / $this->postCount
+        $userCount = count($this->users);
+        $value = $userCount > 0
+            ? $this->postCount / $userCount
             : 0;
 
         return (new StatisticsTo())->setValue(round($value,2));
