@@ -11,7 +11,7 @@ class NoopCalculator extends AbstractCalculator
 {
 
     protected const UNITS = 'posts';
-    
+
     private $users = [];
     private $postCount = 0;
 
@@ -29,7 +29,6 @@ class NoopCalculator extends AbstractCalculator
      */
     protected function doCalculate(): StatisticsTo
     {
-        
         $value = $this->postCount > 0
             ? count($this->users) / $this->postCount
             : 0;
